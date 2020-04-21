@@ -46,14 +46,21 @@ app.get('/test', function (req, res) {
 })
 
 // post to aylien
-app.post('/ask', function(req, res, next) {
-  textapi.sentiment({'url': req.body.text}, function(error, response) {
-    if (error === null) {
-      res.send(response);
-    } else {
-      console.log(error);
-    }
-  })
+app.post('/ask', function(req, res) {
+  if(req.body.text) {
+    textapi.sentiment({'url': req.body.text}, function(error, response) {
+      if (error === null) {
+        res.send(response);
+      } else {
+        console.log(error);
+      }
+    })
+  } else {
+    return res.status(400).json({
+      message: 'Bad Request'
+    })
+  }
+  
 })
 
 module.exports = app
