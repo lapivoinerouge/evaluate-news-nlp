@@ -1,12 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 form {
-    border: 1px solid #545454;
     border-radius: 3px;
-    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-input {
-    padding: 5px 20px;
-    width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
+#input {
+    padding: 5px 10px;
+    margin: 50px 40vw 15px 40vw;
+    width: 60vw;
+    line-height: 20px;
+    font-family: 'VT323', monospace;
+}
+
+#submit {
+    width: 70px;
+    height: 70px;
+    background-color: #bc5e75;
+    color: #1c2c35;
+    border: none;
+    border-radius: 50%;
+    font-family: 'VT323', monospace;
+    font-size: 1em;
+    margin-top: 30px;
+    -webkit-box-shadow: 10px 10px 10px -5px rgba(0,0,0,0.52);
+    -moz-box-shadow: 10px 10px 10px -5px rgba(0,0,0,0.52);
+    box-shadow: 10px 10px 10px -5px rgba(0,0,0,0.52);
+
+    &:hover {
+        opacity: 0.8;
+        -webkit-box-shadow: inset 10px 10px 5px 0px rgba(0,0,0,0.59);
+        -moz-box-shadow: inset 10px 10px 5px 0px rgba(0,0,0,0.59);
+        box-shadow: inset 10px 10px 5px 0px rgba(0,0,0,0.59);
+        cursor: pointer;
+    }
 }

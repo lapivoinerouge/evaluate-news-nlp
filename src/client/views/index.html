@@ -2,43 +2,41 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <title>Ask The Machine</title>
         <link rel="stylesheet" href="/styles/resets.scss">
         <link rel="stylesheet" href="/styles/base.scss">
         <link rel="stylesheet" href="/styles/header.scss">
         <link rel="stylesheet" href="/styles/form.scss">
         <link rel="stylesheet" href="/styles/footer.scss">
+        <link rel="stylesheet" href="/styles/result.scss">
     </head>
 
     <body>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
+        <header id="header">
+            <div id="title">ask the machine</div>
+            <div id="description">paste your url below</div>
         </header>
 
         <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Name">
-                    <!--textarea to paste text-->
-                    <textarea id="nlp-input" name="nlp-input" rows="5" cols="33"></textarea>
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+            <section id="user-input">
+                <form class="input-form" onsubmit="return Client.handleSubmit(event)">
+                    <input id="input" type="text" name="input" value="" placeholder="url">
+                    <input id="submit" type="submit" name="" value="ask" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+            <section id="result-section">
+                <div id="result-title">result</div>
+                <div id="results">
+                    <div id="polarity">polarity: <div id="polarity-result"></div></div>
+                    <div id="subjectivity">subjectivity: <div id="subjectivity-result"></div></div>
+                </div>
             </section>
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <div>background image: <a href="http://getdrawings.com/night-sky-vector">Night Sky Vector</a></div>
         </footer>
 
     </body>

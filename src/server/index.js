@@ -2,22 +2,26 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
+//express
 var path = require('path')
 const express = require('express')
+const app = express()
+
 const mockAPIResponse = require('./mockAPI.js')
-var bodyParser = require('body-parser')
-var cors = require('cors')
-var aylien = require("aylien_textapi");
 
 // aylien api credentials
+var aylien = require("aylien_textapi");
 var textapi = new aylien({
     application_id: process.env.API_ID,
     application_key: process.env.API_KEY
   });
 
-const app = express()
+// cors
+var cors = require('cors')
 app.use(cors())
+
 // to use json
+var bodyParser = require('body-parser')
 app.use(bodyParser.json())
 // to use url encoded values
 app.use(bodyParser.urlencoded({
@@ -25,8 +29,6 @@ app.use(bodyParser.urlencoded({
 }))
 
 app.use(express.static('dist'))
-
-console.log(JSON.stringify(mockAPIResponse))
 
 // designates what port the app will listen to for incoming requests
 app.listen(8080, function () {
@@ -42,3 +44,11 @@ app.get('/', function (req, res) {
 app.get('/test', function (req, res) {
     res.json(mockAPIResponse);
 })
+
+// post to aylien
+app.post('/analyse', function(req, res) {
+// TO DO
+})
+
+
+module.exports = app

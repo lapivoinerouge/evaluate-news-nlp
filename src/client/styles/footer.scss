@@ -1,3 +1,28 @@
 footer {
-    color: red;
+    height: 40px;
+    width: 100vw;
+    background-color: #1c2226;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    -webkit-box-shadow: 0px -25px 50px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -25px 50px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px -25px 50px 1px rgba(0,0,0,0.75);
+
+    div {
+        color: #bc5e75;
+        font-size: 10px;
+        display: inline-block;
+        margin-top: 15px;
+        font-family: 'VT323', monospace;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: #bc5e75;
+    }
 }
