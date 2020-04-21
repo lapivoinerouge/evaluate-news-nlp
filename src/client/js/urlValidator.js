@@ -7,8 +7,6 @@ function validateUrl(inputUrl) {
     if (checkURL(inputUrl)) {
         return true;
     } else {
-        alert('Oops! Invalid URL! Try again!');
-        document.getElementById('input').value = null;
         return false;
     }
 }

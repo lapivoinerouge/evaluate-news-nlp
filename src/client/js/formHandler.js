@@ -19,6 +19,9 @@ function handleSubmit(event) {
             document.getElementById("polarity-result").innerHTML = `${res.polarity} (${res.polarity_confidence})`;
             document.getElementById("subjectivity-result").innerHTML = `${res.subjectivity} (${res.subjectivity_confidence})`;
         })
+    } else {
+        alert('Oops! Invalid URL! Try again!');
+        document.getElementById('input').value = null;
     }
 }
 
