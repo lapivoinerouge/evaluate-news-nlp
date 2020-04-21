@@ -14,7 +14,7 @@ var aylien = require("aylien_textapi");
 var textapi = new aylien({
     application_id: process.env.API_ID,
     application_key: process.env.API_KEY
-  });
+  })
 
 // cors
 var cors = require('cors')
@@ -46,9 +46,14 @@ app.get('/test', function (req, res) {
 })
 
 // post to aylien
-app.post('/analyse', function(req, res) {
-// TO DO
+app.post('/ask', function(req, res, next) {
+  textapi.sentiment({'url': req.body.text}, function(error, response) {
+    if (error === null) {
+      res.send(response);
+    } else {
+      console.log(error);
+    }
+  })
 })
-
 
 module.exports = app
